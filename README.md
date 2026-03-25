@@ -1,4 +1,48 @@
-## BrainBolt (backend-first)
+## BrainBolt — Adaptive Infinite Quiz Platform
+<img width="1399" height="892" alt="image" src="https://github.com/user-attachments/assets/8f4b57a0-2131-450c-8671-d259aaf8442e" />
+
+BrainBolt is a real-time adaptive quiz system that serves one question at a time and dynamically adjusts difficulty based on user performance. It includes streak-based scoring, idempotent answer handling, and live leaderboards.
+
+---
+
+## 🚀 Features
+
+- 🎯 Adaptive difficulty (based on streak + correctness)
+- 🔁 Infinite quiz (one question at a time)
+- ⚡ Real-time leaderboard updates (WebSocket)
+- 🧠 Streak-based scoring system
+- 🔒 Strong per-user consistency
+- ♻️ Idempotent answer submission
+- 🚀 Low-latency question delivery using Redis buffer
+
+---
+
+## 🏗️ Architecture
+
+```text
+Client
+  |
+API Gateway / Load Balancer
+  |
+  +-------------------+------------------+
+  |                   |                  |
+Quiz Service      Leaderboard API   WebSocket Manager
+  |                   |                  |
+  |                   |                  |
+  +--------- Redis ----+-----------------+
+  |      - user_state cache
+  |      - idempotency keys
+  |      - question buffer
+  |      - seen questions
+  |      - ZSET lb:score
+  |      - ZSET lb:streak
+  |
+Postgres
+  - users
+  - questions
+  - user_state
+  - answer_log
+
 
 This project is being built **backend-first** using:
 - **FastAPI**
