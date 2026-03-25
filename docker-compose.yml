@@ -1,0 +1,44 @@
+services:
+  api:
+    build: ./backend
+    environment:
+      PORT: "8080"
+      DATABASE_URL: "postgresql+psycopg://brainbolt:brainbolt@postgres:5432/brainbolt"
+      REDIS_URL: "redis://redis:6379"
+      STREAK_DECAY_SECONDS: "900"
+      EMA_ALPHA: "0.2"
+      MAX_STREAK_MULTIPLIER: "3"
+      CORS_ORIGIN: "*"
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    command: ["sh", "-lc", "python -m app.db.migrate && python -m app.db.seed && uvicorn app.main:app --host 0.0.0.0 --port 8080"]
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: brainbolt
+      POSTGRES_USER: brainbolt
+      POSTGRES_PASSWORD: brainbolt
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U brainbolt -d brainbolt"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:
+

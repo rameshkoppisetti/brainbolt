@@ -1,0 +1,207 @@
+[
+  {
+    "id": "q-1-1",
+    "difficulty": 1,
+    "prompt": "What is 2 + 2?",
+    "choices": ["1", "2", "3", "4"],
+    "correctAnswer": "4",
+    "tags": ["math", "warmup"]
+  },
+  {
+    "id": "q-1-2",
+    "difficulty": 1,
+    "prompt": "Which letter comes after A?",
+    "choices": ["B", "C", "D", "E"],
+    "correctAnswer": "B",
+    "tags": ["letters"]
+  },
+  {
+    "id": "q-2-1",
+    "difficulty": 2,
+    "prompt": "What is 12 / 3?",
+    "choices": ["2", "3", "4", "6"],
+    "correctAnswer": "4",
+    "tags": ["math"]
+  },
+  {
+    "id": "q-3-1",
+    "difficulty": 3,
+    "prompt": "Which data structure is FIFO?",
+    "choices": ["Stack", "Queue", "Tree", "Graph"],
+    "correctAnswer": "Queue",
+    "tags": ["cs"]
+  },
+  {
+    "id": "q-4-1",
+    "difficulty": 4,
+    "prompt": "In Big-O, what is the time complexity of binary search?",
+    "choices": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+    "correctAnswer": "O(log n)",
+    "tags": ["cs", "algorithms"]
+  },
+  {
+    "id": "q-5-1",
+    "difficulty": 5,
+    "prompt": "Which HTTP method is idempotent?",
+    "choices": ["POST", "PATCH", "PUT", "CONNECT"],
+    "correctAnswer": "PUT",
+    "tags": ["web"]
+  },
+  {
+    "id": "q-6-1",
+    "difficulty": 6,
+    "prompt": "What does ACID stand for (the 'I')?",
+    "choices": ["Isolation", "Iteration", "Integration", "Indexing"],
+    "correctAnswer": "Isolation",
+    "tags": ["db"]
+  },
+  {
+    "id": "q-7-1",
+    "difficulty": 7,
+    "prompt": "Which SQL isolation level allows phantom reads?",
+    "choices": ["READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE", "NONE"],
+    "correctAnswer": "READ COMMITTED",
+    "tags": ["db"]
+  },
+  {
+    "id": "q-8-1",
+    "difficulty": 8,
+    "prompt": "In a balanced BST, typical lookup is:",
+    "choices": ["O(1)", "O(log n)", "O(n)", "O(n^2)"],
+    "correctAnswer": "O(log n)",
+    "tags": ["cs"]
+  },
+  {
+    "id": "q-9-1",
+    "difficulty": 9,
+    "prompt": "Which consensus algorithm is commonly associated with leader election and log replication?",
+    "choices": ["Raft", "Dijkstra", "PageRank", "Bloom"],
+    "correctAnswer": "Raft",
+    "tags": ["distributed"]
+  },
+  {
+    "id": "q-9-2",
+    "difficulty": 9,
+    "prompt": "In Paxos, a value is chosen only if a majority of acceptors accept the same proposal number for that value. That majority is typically called a:",
+    "choices": ["Quorum", "Shard", "Replica set", "SCC"],
+    "correctAnswer": "Quorum",
+    "tags": ["distributed"]
+  },
+  {
+    "id": "q-9-3",
+    "difficulty": 9,
+    "prompt": "Which guarantee is stronger for a single register in a distributed system?",
+    "choices": ["Linearizability", "Causal consistency", "Eventual consistency", "Read-your-writes only"],
+    "correctAnswer": "Linearizability",
+    "tags": ["distributed"]
+  },
+  {
+    "id": "q-9-4",
+    "difficulty": 9,
+    "prompt": "A vector clock primarily helps replicas reason about:",
+    "choices": ["Physical time sync", "Causal precedence between events", "TCP congestion", "Disk wear leveling"],
+    "correctAnswer": "Causal precedence between events",
+    "tags": ["distributed"]
+  },
+  {
+    "id": "q-10-1",
+    "difficulty": 10,
+    "prompt": "Which property is strongest for distributed systems CAP tradeoff?",
+    "choices": ["Consistency", "Availability", "Partition tolerance", "Latency"],
+    "correctAnswer": "Partition tolerance",
+    "tags": ["distributed"]
+  },
+  {
+    "id": "q-10-2",
+    "difficulty": 10,
+    "prompt": "The FLP impossibility result applies to deterministic consensus in which model?",
+    "choices": ["Synchronous", "Asynchronous", "Partially synchronous always-live", "Blockchain-only"],
+    "correctAnswer": "Asynchronous",
+    "tags": ["distributed", "theory"]
+  },
+  {
+    "id": "q-10-3",
+    "difficulty": 10,
+    "prompt": "Two-Phase Commit can block if the coordinator fails after preparing participants. That blocking reflects:",
+    "choices": ["A tradeoff to keep atomicity during recovery", "That 2PC never writes logs", "That 2PC is non-blocking by definition", "That cap forces availability"],
+    "correctAnswer": "A tradeoff to keep atomicity during recovery",
+    "tags": ["distributed", "transactions"]
+  },
+  {
+    "id": "q-10-4",
+    "difficulty": 10,
+    "prompt": "In the Amazon Dynamo design, hinted handoff primarily helps:",
+    "choices": ["Durability during temporary node failures", "Strong serializability", "Global clock synchronization", "OLAP queries"],
+    "correctAnswer": "Durability during temporary node failures",
+    "tags": ["distributed", "nosql"]
+  },
+  {
+    "id": "q-10-5",
+    "difficulty": 10,
+    "prompt": "Byzantine failures differ from crash failures mainly because Byzantine nodes can:",
+    "choices": ["Arbitrarily violate their protocol", "Never send messages", "Only lose disk", "Only fail after a clean shutdown"],
+    "correctAnswer": "Arbitrarily violate their protocol",
+    "tags": ["distributed", "security"]
+  },
+  {
+    "id": "q-10-6",
+    "difficulty": 10,
+    "prompt": "Which statement best matches serializability as used in database isolation discussions?",
+    "choices": [
+      "Results match some serial execution of the transactions",
+      "Reads never see stale values",
+      "Every read is linearizable to a global wall clock",
+      "Writes flush to disk before ack"
+    ],
+    "correctAnswer": "Results match some serial execution of the transactions",
+    "tags": ["db", "transactions"]
+  },
+  {
+    "id": "q-10-7",
+    "difficulty": 10,
+    "prompt": "Raft uses randomized timeouts primarily to:",
+    "choices": [
+      "Reduce split votes and elect a leader efficiently",
+      "Guarantee zero message loss",
+      "Replace persistent logs",
+      "Satisfy linearizability without a majority"
+    ],
+    "correctAnswer": "Reduce split votes and elect a leader efficiently",
+    "tags": ["distributed", "consensus"]
+  },
+  {
+    "id": "q-10-8",
+    "difficulty": 10,
+    "prompt": "Which anomaly can still occur under snapshot isolation but is ruled out by serializable isolation?",
+    "choices": [
+      "Write skew on disjoint predicate reads",
+      "Dirty reads",
+      "Non-repeatable reads on the same row",
+      "Two sessions writing the same primary key without conflict checks"
+    ],
+    "correctAnswer": "Write skew on disjoint predicate reads",
+    "tags": ["db"]
+  },
+  {
+    "id": "q-10-9",
+    "difficulty": 10,
+    "prompt": "A merkle tree in sync protocols helps peers efficiently:",
+    "choices": [
+      "Detect which parts of state differ",
+      "Encrypt network traffic by default",
+      "Guarantee exactly-once delivery",
+      "Eliminate the need for checkpoints"
+    ],
+    "correctAnswer": "Detect which parts of state differ",
+    "tags": ["distributed", "sync"]
+  },
+  {
+    "id": "q-10-10",
+    "difficulty": 10,
+    "prompt": "Which problem is classic in leader-based replication when the old leader is not actually dead?",
+    "choices": ["Split brain", "RAID rebuild", "Paging to disk", "Thundering herd on DNS"],
+    "correctAnswer": "Split brain",
+    "tags": ["distributed"]
+  }
+]
+
