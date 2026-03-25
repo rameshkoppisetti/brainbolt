@@ -1,4 +1,6 @@
 ## BrainBolt (backend-first)
+<img width="1399" height="892" alt="image" src="https://github.com/user-attachments/assets/8f4b57a0-2131-450c-8671-d259aaf8442e" />
+
 
 This project is being built **backend-first** using:
 - **FastAPI**
